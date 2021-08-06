@@ -1,0 +1,1307 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type='text/xsl' href='../resources/feed.xsl'?>
+<interface xmlns="http://zero-install.sourceforge.net/2004/injector/interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uri="https://apps.0install.net/gui/vlc.xml" xsi:schemaLocation="http://zero-install.sourceforge.net/2004/injector/interface http://0install.de/schema/injector/interface/interface.xsd http://0install.de/schema/desktop-integration/capabilities http://0install.de/schema/desktop-integration/capabilities/capabilities.xsd">
+  <name>VLC media player</name>
+  <summary xml:lang="en">Potente reproductor de medios, que reproduce la mayoría de los códecs de medios y formatos de video que existen.</summary>
+  <summary xml:lang="de">Potente reproductor de medios, que reproduce la mayoría de los códecs de medios y formatos de video que existen.</summary>
+  <description xml:lang="en">El reproductor multimedia que satisface todas sus necesidades. Puede manejar DVD, (S) VCD, CD de audio, transmisiones web, tarjetas de TV y mucho más. No necesita realizar un seguimiento de una docena de paquetes de códec que necesita tener instalados. VLC tiene todos los códecs integrados. Viene con soporte para casi todos los códecs que existen. Y lo que es más, ¡incluso puede reproducir el archivo o el medio si está dañado! Las piezas faltantes o rotas no detienen a VLC, reproduce toda la información de video y audio que aún está intacta.</description>
+  <description xml:lang="de">El reproductor multimedia que satisface todas sus necesidades. Puede manejar DVD, (S) VCD, CD de audio, transmisiones web, tarjetas de TV y mucho más. No necesita realizar un seguimiento de una docena de paquetes de códec que necesita tener instalados. VLC tiene todos los códecs integrados. Viene con soporte para casi todos los códecs que existen. Y lo que es más, ¡incluso puede reproducir el archivo o el medio si está dañado! Las piezas faltantes o rotas no detienen a VLC, reproduce toda la información de video y audio que aún está intacta.</description>
+  <homepage>http://www.videolan.org/vlc/</homepage>
+  <icon href="https://raw.githubusercontent.com/0install/apps/master/gui/vlc.png" type="image/png"/>
+  <icon href="https://raw.githubusercontent.com/0install/apps/master/gui/vlc.ico" type="image/vnd.microsoft.icon"/>
+  <category>AudioVideo</category>
+
+  <entry-point binary-name="vlc" command="run"/>
+
+  <package-implementation arch="Linux-*" main="/usr/bin/vlc" package="vlc"/>
+
+  <group license="GPL v2 (GNU General Public License)">
+    
+    <implementation arch="Windows-i486" version="3.0.16" released="2021-06-18" stability="stable" main="vlc.exe" id="sha1new=08c463d96d5fa2e1d8204c41f3b99da1f576c451">
+      <manifest-digest sha256new="4KPGQ7Z4OFZMT6FV32YKN2WBOQCVBRWRRIUP2AR7T6EEUZRUCOMA"/>
+      <archive href="https://get.videolan.org/vlc/3.0.16/win32/vlc-3.0.16-win32.7z" size="35412587" type="application/x-7z-compressed" extract="vlc-3.0.16"/>
+    </implementation>
+  </group>
+
+  <capabilities xmlns="http://0install.de/schema/desktop-integration/capabilities">
+    <default-program id="VLC" service="Media">
+      <install-commands hide-icons="spad-setup.exe" hide-icons-args="/HideIcons /S" reinstall="spad-setup.exe" reinstall-args="/Reinstall /S" show-icons="spad-setup.exe" show-icons-args="/ShowIcons /S"/>
+    </default-program>
+    <registration capability-reg-path="Software\Clients\Media\VLC\Capabilities" id="VLC"/>
+    <file-type id="VLC.3g2">
+      <description xml:lang="en">VLC media file (.3g2)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/3gpp2" perceived-type="video" value=".3g2"/>
+    </file-type>
+    <file-type id="VLC.3gp">
+      <description xml:lang="en">VLC media file (.3gp)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/3gpp" perceived-type="video" value=".3gp"/>
+    </file-type>
+    <file-type id="VLC.3gp2">
+      <description xml:lang="en">VLC media file (.3gp2)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/3gpp2" perceived-type="video" value=".3gp2"/>
+    </file-type>
+    <file-type id="VLC.3gpp">
+      <description xml:lang="en">VLC media file (.3gpp)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/3gpp" perceived-type="video" value=".3gpp"/>
+    </file-type>
+    <file-type id="VLC.a52">
+      <description xml:lang="en">VLC media file (.a52)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".a52"/>
+    </file-type>
+    <file-type id="VLC.aac">
+      <description xml:lang="en">VLC media file (.aac)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/vnd.dlna.adts" perceived-type="audio" value=".AAC"/>
+    </file-type>
+    <file-type id="VLC.ac3">
+      <description xml:lang="en">VLC media file (.ac3)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".ac3"/>
+    </file-type>
+    <file-type id="VLC.adt">
+      <description xml:lang="en">VLC media file (.adt)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/vnd.dlna.adts" perceived-type="audio" value=".ADT"/>
+    </file-type>
+    <file-type id="VLC.adts">
+      <description xml:lang="en">VLC media file (.adts)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/vnd.dlna.adts" perceived-type="audio" value=".ADTS"/>
+    </file-type>
+    <file-type id="VLC.aif">
+      <description xml:lang="en">VLC media file (.aif)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/aiff" perceived-type="audio" value=".aif"/>
+    </file-type>
+    <file-type id="VLC.aifc">
+      <description xml:lang="en">VLC media file (.aifc)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/aiff" perceived-type="audio" value=".aifc"/>
+    </file-type>
+    <file-type id="VLC.aiff">
+      <description xml:lang="en">VLC media file (.aiff)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/aiff" perceived-type="audio" value=".aiff"/>
+    </file-type>
+    <file-type id="VLC.amr">
+      <description xml:lang="en">VLC media file (.amr)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".amr"/>
+    </file-type>
+    <file-type id="VLC.amv">
+      <description xml:lang="en">VLC media file (.amv)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".amv"/>
+    </file-type>
+    <file-type id="VLC.aob">
+      <description xml:lang="en">VLC media file (.aob)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".aob"/>
+    </file-type>
+    <file-type id="VLC.ape">
+      <description xml:lang="en">VLC media file (.ape)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".ape"/>
+    </file-type>
+    <file-type id="VLC.asf">
+      <description xml:lang="en">VLC media file (.asf)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/x-ms-asf" perceived-type="video" value=".asf"/>
+    </file-type>
+    <file-type id="VLC.asx">
+      <description xml:lang="en">VLC media file (.asx)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/x-ms-asf" perceived-type="video" value=".asx"/>
+    </file-type>
+    <file-type id="VLC.au">
+      <description xml:lang="en">VLC media file (.au)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/basic" perceived-type="audio" value=".au"/>
+    </file-type>
+    <file-type id="VLC.avi">
+      <description xml:lang="en">VLC media file (.avi)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/avi" perceived-type="video" value=".avi"/>
+    </file-type>
+    <file-type id="VLC.b4s">
+      <description xml:lang="en">VLC media file (.b4s)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".b4s"/>
+    </file-type>
+    <file-type id="VLC.bin">
+      <description xml:lang="en">VLC media file (.bin)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".bin"/>
+    </file-type>
+    <file-type id="VLC.cda">
+      <description xml:lang="en">VLC media file (.cda)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".cda"/>
+    </file-type>
+    <file-type id="VLC.cue">
+      <description xml:lang="en">VLC media file (.cue)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".cue"/>
+    </file-type>
+    <file-type id="VLC.divx">
+      <description xml:lang="en">VLC media file (.divx)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".divx"/>
+    </file-type>
+    <file-type id="VLC.dts">
+      <description xml:lang="en">VLC media file (.dts)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".dts"/>
+    </file-type>
+    <file-type id="VLC.dv">
+      <description xml:lang="en">VLC media file (.dv)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".dv"/>
+    </file-type>
+    <file-type id="VLC.flac">
+      <description xml:lang="en">VLC media file (.flac)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".flac"/>
+    </file-type>
+    <file-type id="VLC.flv">
+      <description xml:lang="en">VLC media file (.flv)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".flv"/>
+    </file-type>
+    <file-type id="VLC.gxf">
+      <description xml:lang="en">VLC media file (.gxf)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".gxf"/>
+    </file-type>
+    <file-type id="VLC.ifo">
+      <description xml:lang="en">VLC media file (.ifo)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".ifo"/>
+    </file-type>
+    <file-type id="VLC.it">
+      <description xml:lang="en">VLC media file (.it)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".it"/>
+    </file-type>
+    <file-type id="VLC.m1v">
+      <description xml:lang="en">VLC media file (.m1v)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/mpeg" perceived-type="video" value=".m1v"/>
+    </file-type>
+    <file-type id="VLC.m2t">
+      <description xml:lang="en">VLC media file (.m2t)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/vnd.dlna.mpeg-tts" perceived-type="video" value=".m2t"/>
+    </file-type>
+    <file-type id="VLC.m2ts">
+      <description xml:lang="en">VLC media file (.m2ts)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/vnd.dlna.mpeg-tts" perceived-type="video" value=".m2ts"/>
+    </file-type>
+    <file-type id="VLC.m2v">
+      <description xml:lang="en">VLC media file (.m2v)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/mpeg" perceived-type="video" value=".m2v"/>
+    </file-type>
+    <file-type id="VLC.m3u">
+      <description xml:lang="en">VLC media file (.m3u)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/x-mpegurl" perceived-type="audio" value=".m3u"/>
+    </file-type>
+    <file-type id="VLC.m3u8">
+      <description xml:lang="en">VLC media file (.m3u8)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".m3u8"/>
+    </file-type>
+    <file-type id="VLC.m4a">
+      <description xml:lang="en">VLC media file (.m4a)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/mp4" perceived-type="audio" value=".m4a"/>
+    </file-type>
+    <file-type id="VLC.m4p">
+      <description xml:lang="en">VLC media file (.m4p)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension perceived-type="audio" value=".m4p"/>
+    </file-type>
+    <file-type id="VLC.m4v">
+      <description xml:lang="en">VLC media file (.m4v)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/mp4" perceived-type="video" value=".m4v"/>
+    </file-type>
+    <file-type id="VLC.mid">
+      <description xml:lang="en">VLC media file (.mid)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/mid" perceived-type="audio" value=".mid"/>
+    </file-type>
+    <file-type id="VLC.mka">
+      <description xml:lang="en">VLC media file (.mka)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".mka"/>
+    </file-type>
+    <file-type id="VLC.mkv">
+      <description xml:lang="en">VLC media file (.mkv)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".mkv"/>
+    </file-type>
+    <file-type id="VLC.mlp">
+      <description xml:lang="en">VLC media file (.mlp)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".mlp"/>
+    </file-type>
+    <file-type id="VLC.mod">
+      <description xml:lang="en">VLC media file (.mod)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/mpeg" perceived-type="video" value=".mod"/>
+    </file-type>
+    <file-type id="VLC.mov">
+      <description xml:lang="en">VLC media file (.mov)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/quicktime" perceived-type="video" value=".mov"/>
+    </file-type>
+    <file-type id="VLC.mp1">
+      <description xml:lang="en">VLC media file (.mp1)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".mp1"/>
+    </file-type>
+    <file-type id="VLC.mp2">
+      <description xml:lang="en">VLC media file (.mp2)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/mpeg" perceived-type="audio" value=".mp2"/>
+    </file-type>
+    <file-type id="VLC.mp2v">
+      <description xml:lang="en">VLC media file (.mp2v)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/mpeg" perceived-type="video" value=".mp2v"/>
+    </file-type>
+    <file-type id="VLC.mp3">
+      <description xml:lang="en">VLC media file (.mp3)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/mpeg" perceived-type="audio" value=".mp3"/>
+    </file-type>
+    <file-type id="VLC.mp4">
+      <description xml:lang="en">VLC media file (.mp4)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/mp4" perceived-type="video" value=".mp4"/>
+    </file-type>
+    <file-type id="VLC.mp4v">
+      <description xml:lang="en">VLC media file (.mp4v)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/mp4" perceived-type="video" value=".mp4v"/>
+    </file-type>
+    <file-type id="VLC.mpa">
+      <description xml:lang="en">VLC media file (.mpa)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/mpeg" perceived-type="video" value=".mpa"/>
+    </file-type>
+    <file-type id="VLC.mpc">
+      <description xml:lang="en">VLC media file (.mpc)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".mpc"/>
+    </file-type>
+    <file-type id="VLC.mpe">
+      <description xml:lang="en">VLC media file (.mpe)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/mpeg" perceived-type="video" value=".mpe"/>
+    </file-type>
+    <file-type id="VLC.mpeg">
+      <description xml:lang="en">VLC media file (.mpeg)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/mpeg" perceived-type="video" value=".mpeg"/>
+    </file-type>
+    <file-type id="VLC.mpeg1">
+      <description xml:lang="en">VLC media file (.mpeg1)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".mpeg1"/>
+    </file-type>
+    <file-type id="VLC.mpeg2">
+      <description xml:lang="en">VLC media file (.mpeg2)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".mpeg2"/>
+    </file-type>
+    <file-type id="VLC.mpeg4">
+      <description xml:lang="en">VLC media file (.mpeg4)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".mpeg4"/>
+    </file-type>
+    <file-type id="VLC.mpg">
+      <description xml:lang="en">VLC media file (.mpg)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/mpeg" perceived-type="video" value=".mpg"/>
+    </file-type>
+    <file-type id="VLC.mpv2">
+      <description xml:lang="en">VLC media file (.mpv2)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/mpeg" perceived-type="video" value=".mpv2"/>
+    </file-type>
+    <file-type id="VLC.mts">
+      <description xml:lang="en">VLC media file (.mts)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/vnd.dlna.mpeg-tts" perceived-type="video" value=".mts"/>
+    </file-type>
+    <file-type id="VLC.mxf">
+      <description xml:lang="en">VLC media file (.mxf)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".mxf"/>
+    </file-type>
+    <file-type id="VLC.nsv">
+      <description xml:lang="en">VLC media file (.nsv)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".nsv"/>
+    </file-type>
+    <file-type id="VLC.nuv">
+      <description xml:lang="en">VLC media file (.nuv)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".nuv"/>
+    </file-type>
+    <file-type id="VLC.oga">
+      <description xml:lang="en">VLC media file (.oga)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".oga"/>
+    </file-type>
+    <file-type id="VLC.ogg">
+      <description xml:lang="en">VLC media file (.ogg)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".ogg"/>
+    </file-type>
+    <file-type id="VLC.ogm">
+      <description xml:lang="en">VLC media file (.ogm)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".ogm"/>
+    </file-type>
+    <file-type id="VLC.ogv">
+      <description xml:lang="en">VLC media file (.ogv)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".ogv"/>
+    </file-type>
+    <file-type id="VLC.ogx">
+      <description xml:lang="en">VLC media file (.ogx)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".ogx"/>
+    </file-type>
+    <file-type id="VLC.oma">
+      <description xml:lang="en">VLC media file (.oma)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".oma"/>
+    </file-type>
+    <file-type id="VLC.pls">
+      <description xml:lang="en">VLC media file (.pls)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".pls"/>
+    </file-type>
+    <file-type id="VLC.ram">
+      <description xml:lang="en">VLC media file (.ram)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".ram"/>
+    </file-type>
+    <file-type id="VLC.rec">
+      <description xml:lang="en">VLC media file (.rec)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".rec"/>
+    </file-type>
+    <file-type id="VLC.rm">
+      <description xml:lang="en">VLC media file (.rm)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".rm"/>
+    </file-type>
+    <file-type id="VLC.rmi">
+      <description xml:lang="en">VLC media file (.rmi)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/mid" perceived-type="audio" value=".rmi"/>
+    </file-type>
+    <file-type id="VLC.rmvb">
+      <description xml:lang="en">VLC media file (.rmvb)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".rmvb"/>
+    </file-type>
+    <file-type id="VLC.s3m">
+      <description xml:lang="en">VLC media file (.s3m)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".s3m"/>
+    </file-type>
+    <file-type id="VLC.sdp">
+      <description xml:lang="en">VLC media file (.sdp)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".sdp"/>
+    </file-type>
+    <file-type id="VLC.snd">
+      <description xml:lang="en">VLC media file (.snd)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/basic" perceived-type="audio" value=".snd"/>
+    </file-type>
+    <file-type id="VLC.spx">
+      <description xml:lang="en">VLC media file (.spx)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".spx"/>
+    </file-type>
+    <file-type id="VLC.tod">
+      <description xml:lang="en">VLC media file (.tod)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".tod"/>
+    </file-type>
+    <file-type id="VLC.ts">
+      <description xml:lang="en">VLC media file (.ts)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/vnd.dlna.mpeg-tts" perceived-type="video" value=".ts"/>
+    </file-type>
+    <file-type id="VLC.tta">
+      <description xml:lang="en">VLC media file (.tta)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".tta"/>
+    </file-type>
+    <file-type id="VLC.tts">
+      <description xml:lang="en">VLC media file (.tts)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/vnd.dlna.mpeg-tts" perceived-type="video" value=".tts"/>
+    </file-type>
+    <file-type id="VLC.vlc">
+      <description xml:lang="en">VLC media file (.vlc)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".vlc"/>
+    </file-type>
+    <file-type id="VLC.vob">
+      <description xml:lang="en">VLC media file (.vob)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension perceived-type="video" value=".vob"/>
+    </file-type>
+    <file-type id="VLC.voc">
+      <description xml:lang="en">VLC media file (.voc)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".voc"/>
+    </file-type>
+    <file-type id="VLC.vqf">
+      <description xml:lang="en">VLC media file (.vqf)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".vqf"/>
+    </file-type>
+    <file-type id="VLC.vro">
+      <description xml:lang="en">VLC media file (.vro)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".vro"/>
+    </file-type>
+    <file-type id="VLC.w64">
+      <description xml:lang="en">VLC media file (.w64)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".w64"/>
+    </file-type>
+    <file-type id="VLC.wav">
+      <description xml:lang="en">VLC media file (.wav)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/wav" perceived-type="audio" value=".wav"/>
+    </file-type>
+    <file-type id="VLC.webm">
+      <description xml:lang="en">VLC media file (.webm)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".webm"/>
+    </file-type>
+    <file-type id="VLC.wma">
+      <description xml:lang="en">VLC media file (.wma)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="audio/x-ms-wma" perceived-type="audio" value=".wma"/>
+    </file-type>
+    <file-type id="VLC.wmv">
+      <description xml:lang="en">VLC media file (.wmv)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension mime-type="video/x-ms-wmv" perceived-type="video" value=".wmv"/>
+    </file-type>
+    <file-type id="VLC.wv">
+      <description xml:lang="en">VLC media file (.wv)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".wv"/>
+    </file-type>
+    <file-type id="VLC.wtv">
+      <description xml:lang="en">VLC media file (.wtv)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".wtv"/>
+    </file-type>
+    <file-type id="VLC.dvr-ms">
+      <description xml:lang="en">VLC media file (.dvr-ms)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".dvr-ms"/>
+    </file-type>
+    <file-type id="VLC.xa">
+      <description xml:lang="en">VLC media file (.xa)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".xa"/>
+    </file-type>
+    <file-type id="VLC.xm">
+      <description xml:lang="en">VLC media file (.xm)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".xm"/>
+    </file-type>
+    <file-type id="VLC.xspf">
+      <description xml:lang="en">VLC media file (.xspf)</description>
+      <verb args="--started-from-file &quot;%V&quot;" name="open">
+        <description xml:lang="en">Play</description>
+        <description xml:lang="de">Abspielen</description>
+      </verb>
+      <verb args="--started-from-file --playlist-enqueue &quot;%V&quot;" name="AddToPlaylistVLC">
+        <description xml:lang="en">Add to VLC's Playlist</description>
+        <description xml:lang="de">Zu VLC's Playlist hinzufügen</description>
+      </verb>
+      <extension value=".xspf"/>
+    </file-type>
+    <auto-play id="VLCPlayCDAudioOnArrival" prog-id="VLC.CDAudio" provider="VideoLAN VLC media player">
+      <description xml:lang="en">Play audio CD</description>
+      <description xml:lang="de">Audio CD abspielen</description>
+      <verb args="--started-from-file cdda:///%V" name="open"/>
+      <event name="PlayCDAudioOnArrival"/>
+    </auto-play>
+    <auto-play id="VLCPlayDVDAudioOnArrival" prog-id="VLC.DVDAudio" provider="VideoLAN VLC media player">
+      <description xml:lang="en">Play audio DVD</description>
+      <description xml:lang="de">Audio DVD abspielen</description>
+      <verb args="%V" name="open"/>
+      <event name="PlayDVDAudioOnArrival"/>
+    </auto-play>
+    <auto-play id="VLCPlayDVDMovieOnArrival" prog-id="VLC.DVDMovie" provider="VideoLAN VLC media player">
+      <description xml:lang="en">Play DVD movie</description>
+      <description xml:lang="de">DVD Film abspielen</description>
+      <verb args="--started-from-file dvd:///%V" name="open"/>
+      <event name="PlayDVDMovieOnArrival"/>
+    </auto-play>
+    <auto-play id="VLCPlayMusicFilesOnArrival" prog-id="VLC.MusicFiles" provider="VideoLAN VLC media player">
+      <description xml:lang="en">Play audio files</description>
+      <description xml:lang="de">Audio Dateien abspielen</description>
+      <verb args="%V" name="open"/>
+      <event name="PlayMusicFilesOnArrival"/>
+    </auto-play>
+    <auto-play id="VLCPlaySVCDMovieOnArrival" prog-id="VLC.SVCDMovie" provider="VideoLAN VLC media player">
+      <description xml:lang="en">Play SVCD movie</description>
+      <description xml:lang="de">SVCD Film abspielen</description>
+      <verb args="--started-from-file vcd:///%V" name="open"/>
+      <event name="PlaySuperVideoCDMovieOnArrival"/>
+    </auto-play>
+    <auto-play id="VLCPlayVCDMovieOnArrival" prog-id="VLC.VCDMovie" provider="VideoLAN VLC media player">
+      <description xml:lang="en">Play VCD movie</description>
+      <description xml:lang="de">VCD Film abspielen</description>
+      <verb args="--started-from-file vcd:///%V" name="open"/>
+      <event name="PlayVideoCDMovieOnArrival"/>
+    </auto-play>
+    <auto-play id="VLCPlayVideoFilesOnArrival" prog-id="VLC.VideoFiles" provider="VideoLAN VLC media player">
+      <description xml:lang="en">Play video files</description>
+      <description xml:lang="de">Video Dateien abspielen</description>
+      <verb args="%V" name="open"/>
+      <event name="PlayVideoFilesOnArrival"/>
+    </auto-play>
+  </capabilities>
+</interface>
+<!-- Base64 Signature
+iQEzBAABCgAdFiEEiMih83WShpHXNlwCWao5J8JOTh4FAmDQooIACgkQWao5J8JOTh42Lwf8Du0R
++SoFYG5bcMhHAvSvXrt7EpBn270u8RL4ORc6dEwyeZ8zo9exGop6vaq2TkFrkPT+WcPcJ02i+UWW
+Qpjhgdxxbe0eQ7aPUzuuH2ss7plXbM7xHUL4IID0gkFLVuVFJdQh8iJlz92C4yvPfmhN3QH8viGy
+/OKREoBnrtRVsyEKRymXvIKp2m3kEKekEZWrMIbvQqmZemvM0sHhyv56UaWYTPa4FzivofUemnze
++7T6Ju2WOGElr/LtoqA8GrrsZScLeGuCAczJxYhh2LsmyjC7RV4vK/eSQDuCbmPOb8pueo75eyzc
+ROopioRVCWNUlnNJhiWI3Ei5E7Bgh5swvg==
+
+-->
