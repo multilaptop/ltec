@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://zero-install.sourceforge.net/2004/injector/interface https://docs.0install.net/specifications/feed.xsd http://0install.de/schema/desktop-integration/capabilities https://docs.0install.net/specifications/capabilities.xsd" xmlns="http://zero-install.sourceforge.net/2004/injector/interface">
+  <name>VLC media player name</name>
+  <summary xml:lang="en">VLC media player 2.0.2</summary>
+  <category>AudioVideo</category>
+  <implementation arch="Windows-*" version="2.0.2" id="sha1new=125145d469de1c4b6947026b41646ed2f25783f3">
+    <command name="run" path="vlc.exe" />
+    <command name="spad-setup" path="spad-setup.exe" />
+    <command name="vlc-cache-gen" path="vlc-cache-gen.exe" />
+    <manifest-digest sha256new="JCWY2HLMBPX2GXBDAODZB6TFRVQKBPWGQUAYNOUSRDYETOFZ7I6Q" />
+    <archive href="https://get.videolan.org/vlc/2.0.2/win32/vlc-2.0.2-win32.7z" size="19501743" type="application/x-7z-compressed" extract="vlc-2.0.2" />
+  </implementation>
+  <entry-point command="run" binary-name="vlc" />
+  <entry-point command="spad-setup" binary-name="spad-setup" />
+  <entry-point command="vlc-cache-gen" binary-name="vlc-cache-gen">
+    <needs-terminal />
+    <name xml:lang="en">VLC media player</name>
+    <summary xml:lang="en">VLC media player 2.0.2</summary>
+  </entry-point>
+</interface>
